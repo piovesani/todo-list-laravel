@@ -1,6 +1,6 @@
 :root {
     --bg-light: #F0F2FA;
-    --bg-white: #F6F5FF;
+    --bg-white: #F6F6FF;
     --text-dark: #0A0040;
     --color-primary: #6143FF;
     --wd-sidebar: 80px;
@@ -72,13 +72,14 @@ body{
 .btn-primary{
     background-color: var(--color-primary);
     color: var(--bg-white);
-    transition: all 0.1s ease;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover{
     background-color: var(--bg-light);
     color: var(--color-primary);
     border: 1px solid var(--color-primary);
+    transition: all 0.3s ease-in-out;
 }
 
 main{
@@ -92,6 +93,8 @@ main{
 
 .list{
     flex: 2;
+    padding-left: 20px;
+    margin-top: 5px;
 }
 
 .graph-header{
@@ -117,4 +120,76 @@ main{
     margin-top: 20px;
 }
 
+.graph-placeholder{
+    width: 300px;
+    height: 300px;
+    background-color: #6143FF;
+    margin: 20px 0 0 35px;
+}
+
+.graph-tasks-left{
+    margin: 20px 0 0 35px;
+}
+
+.list-header{
+    margin-bottom: 10px;
+}
+.list-header select{
+    width: 180px;
+    color: var(--color-primary);
+    background-color: var(--bg-white);
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    outline: 0;
+}
+
+.list-header select option{
+    color: var(--color-primary);
+    background-color: var(--bg-white);
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    outline: 0;
+}
+
+.list .tasks{
+    padding: 30px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 3px solid var(--bg-light);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.list .tasks:hover{
+    background-color: var(--bg-light);
+}
+
+.list .tasks  .task-title{
+    display: flex;
+}
+
+.list .tasks  .task-title input{
+    margin-right: 10px;
+}
+
+.list .tasks .task-priority{
+    display: flex;
+    align-items: center;
+}
+
+.list .tasks .task-priority .sphere{
+    margin-right: 10px;
+    width: 22px;
+    height: 22px;
+    background-color: red;
+    border-radius: 11px;
+}
+
+.list .tasks .task-action a{
+    margin-left: 20px;
+}
 

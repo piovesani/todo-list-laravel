@@ -37,9 +37,33 @@
                 <div class="graph-header-subtitle">
                     Tarefas <b>3/6</b>
                 </div>
+
+                <div class="graph-placeholder"></div>
+                <div class="graph-tasks-left">
+                    Restam 3 tarefas a serem realizadas
+                </div>
             </section>
             <section class="list">
-                Lista
+                <div class="list-header">
+                    <select name="">
+                        <option value="1">Todas as tarefas</option>
+                    </select>
+                </div>
+
+                <div class="tasks">
+                    <div class="task-title">
+                        <input type="checkbox" />
+                        <p>Tiltulo da tarefa</p>
+                    </div>
+                    <div class="task-priority">
+                        <div class="sphere"></div>
+                        <p>Tiltulo da tarefa</p>
+                    </div>
+                    <div class="task-action">
+                        <a>Editar</a>
+                        <a>Excluir</a>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
