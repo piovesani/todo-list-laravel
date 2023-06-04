@@ -83,6 +83,7 @@ body{
 }
 
 main{
+    width: calc(100vw - var(--wd-sidebar));
     padding: 20px;
     display: flex;
 }
@@ -104,16 +105,34 @@ main{
 
 }
 
-
+.graph-header h2{
+    font-size: 22px;
+    font-weight: 500;
+    margin-right: 10px;
+}
 .graph-header .line{
-    margin-left: -50px;
-    width: 100px;
+    width: 40px;
     height: 2px;
     background-color: var(--color-primary);
 }
 
 .graph-header .date{
     padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.graph-header .date input[type="date" i] {
+    color: 14px;
+    background-color: transparent;
+    cursor: pointer;
+    align-items: center;
+    overflow: hidden;
+    padding: 0px;
+    border: 0;
+    outline: 0;
 }
 
 .graph-header-subtitle{
@@ -121,14 +140,21 @@ main{
 }
 
 .graph-placeholder{
+    margin: 80px 0 80px 35px;
     width: 300px;
     height: 300px;
-    background-color: #6143FF;
-    margin: 20px 0 0 35px;
+    background: url('/assets/images/graph.png');
+    background-size: contain;
 }
 
 .graph-tasks-left{
     margin: 20px 0 0 35px;
+    display: flex;
+    align-items: center;
+}
+
+.graph-tasks-left img{
+    margin-right: 10px;
 }
 
 .list-header{
@@ -189,7 +215,73 @@ main{
     border-radius: 11px;
 }
 
-.list .tasks .task-action a{
+.list .tasks .task-action a img {
     margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
+.task-action a img:hover{
+    transform: scale(1.20);
+}
+
+
+@media (max-width: 599px){
+    .sidebar{
+        display: none;
+    }
+
+    .sidebar .logo{
+        font-size: 20px;
+        margin-left: -5px;
+    }
+
+    .content nav{
+        width: 100vw
+    }
+
+    main, .graph-header, .list, .tasks{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .graph-header h2{
+        text-align: left;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .graph .line{
+        display: none;
+    }
+
+    .graph-header .date{
+        margin-left: -40px !important;
+        margin-bottom: 20px;
+    }
+
+    .graph-placeholder {
+        width: 250px;
+        height: 250px;
+    }
+
+    .graph-tasks-left {
+        width: 100%;
+        font-size: 14px;
+        margin-bottom: 40px;
+    }
+
+    .tasks {
+        width: 300px !important;
+        display: flex;
+        flex-direction: row;
+        font-size: 10px;
+        gap: 10px;
+    }
+
+    .task-title, .task-priority, .task-action{
+        display: flex;
+
+    }
+}

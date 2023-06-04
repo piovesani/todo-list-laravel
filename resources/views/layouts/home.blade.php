@@ -30,7 +30,9 @@
                     <div class="line"></div>
 
                     <div class="date">
-                        Data
+                        <a><img src="/assets/images/icon-prev.png" /></a>
+                        <input type="date" />
+                        <a><img src="/assets/images/icon-next.png" /></a>
                     </div>
                 </div>
 
@@ -40,6 +42,7 @@
 
                 <div class="graph-placeholder"></div>
                 <div class="graph-tasks-left">
+                    <img src="/assets/images/icon-info.png" />
                     Restam 3 tarefas a serem realizadas
                 </div>
             </section>
@@ -60,8 +63,8 @@
                         <p>Tiltulo da tarefa</p>
                     </div>
                     <div class="task-action">
-                        <a>Editar</a>
-                        <a>Excluir</a>
+                        <a><img src="/assets/images/icon-edit.png" /></a>
+                        <a><img src="/assets/images/icon-delete.png" /></a>
                     </div>
                 </div>
             </section>
