@@ -1,7 +1,7 @@
 <x-layout page="TodoApp">
 
     <x-slot:btn>
-        <a href="#" class="btn btn-primary">
+        <a href="" class="btn btn-primary">
             Criar tarefa
         </a>
     </x-slot:btn>
@@ -35,22 +35,8 @@
             </select>
         </div>
 
-        @php
-            $tasks = [
-                [
-                    'id' => 1,
-                    'done' => true,
-                    'title' => 'Minha primeira task',
-                    'category' => 'Categoria 1'
-                ],
-                [
-                    'id' => 2,
-                    'done' => true,
-                    'title' => 'Minha segunda task',
-                    'category' => 'Categoria 2'
-                ]
-            ];
-        @endphp
-        <x-task :data=$tasks[0] />
-        <x-task :data=$tasks[1] />
+        @foreach ($tasks as $task)
+        <x-task :data=$task />
+        @endforeach
+
 </x-layout>

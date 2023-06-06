@@ -73,6 +73,7 @@ body{
     background-color: var(--color-primary);
     color: var(--bg-white);
     transition: all 0.3s ease;
+    border: 0;
 }
 
 .btn-primary:hover{
@@ -183,11 +184,19 @@ main{
     padding: 30px 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-bottom: 10px;
     border-bottom: 3px solid var(--bg-light);
     border-radius: 4px;
     transition: all 0.3s ease;
+}
+
+.task-title, .task-priority, .task-action{
+    flex: 1;
+}
+
+.task-action {
+    display: flex;
+    justify-content: end;
 }
 
 .list .tasks:hover{
@@ -226,6 +235,45 @@ main{
     transform: scale(1.20);
 }
 
+.create-task{
+    margin: auto;
+    padding-top: 20px;
+}
+
+.create-task h1{
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.input-area{
+    display: block;
+    margin-bottom: 40px;
+}
+
+.input-area label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-area input, .input-area select{
+    background-color: #fff;
+    color: #0A0040;
+    width: 400px;
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: 0;
+    outline: 0;
+}
+
+.input-area textarea{
+    width: 400px;
+    height: 120px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 0;
+    outline: 0;
+}
 
 @media (max-width: 599px){
     .sidebar{

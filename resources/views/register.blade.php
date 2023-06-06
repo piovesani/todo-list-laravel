@@ -1,6 +1,6 @@
 <x-layout page="Register">
     <x-slot:btn>
-        <a href="#" class="btn btn-primary">
+        <a href="{{route('login')}}" class="btn btn-primary">
             Registre-se
         </a>
     </x-slot:btn>
