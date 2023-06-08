@@ -8,7 +8,9 @@
         <section class="create-task">
 
             <h1>Criar Tarefa</h1>
-            <form>
+            <form method="POST" action="{{route('tasks.createAction')}}">
+
+                @csrf
 
                 <x-form.textInput
                     name="title"
@@ -17,31 +19,33 @@
                     required="required"/>
 
                 <x-form.textInput
-                    type="date"
+                    type="datetime-local"
                     name="due_date"
                     label="Data da realização"
                     required="required"/>
 
 
-                <div class="input-area">
-                    <label for="category">
-                        Categoria
-                    </label>
-                    <select id="category" name="category" required>
-                        <option selected disabled value="">Selecione uma categoria</option>
-                        <option>Um valor qualquer</option>
-                    </select>
-                </div>
+                <x-form.selectInput
+                    name="category_id"
+                    label="Categoria"
+                    required="required">
+                    @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->title}}</option>
+                    @endforeach
+                </x-form.selectInput>
+
+
+                <x-form.textAreaInput
+                    name="description"
+                    label="Descrição da tarefa"
+                    placeholder="Digite uma descrição da tarefa"
+                    required="required">
+                    <option>Um valor qualquer</option>
+                </x-form.textAreaInput>
 
                 <div class="input-area">
-                    <label for="desc">
-                        Descrição da tarefa
-                    </label>
-                    <textarea id="desc" placeholder="Digite uma descrição da tarefa"></textarea>
-                </div>
+                    <x-form.formButton resetTxt="Limpar campos" submitTxt="Criar tarefa" />
 
-                <div class="input-area">
-                    <button type="submit" class="btn btn-primary">Enviar tarefa</button>
                 </div>
             </form>
         </section>

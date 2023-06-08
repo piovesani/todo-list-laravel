@@ -9,7 +9,11 @@ use App\Http\Controllers\TaskController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/task/new', [TaskController::class, 'create'])->name('tasks.create');
+Route::post('/task/createAction', [TaskController::class, 'createAction'])->name('tasks.createAction');
+
 Route::get('/task/edit', [TaskController::class, 'edit'])->name('task.edit');
+Route::post('/task/editAction', [TaskController::class, 'editAction'])->name('tasks.editAction');
+
 Route::get('/task/delete', [TaskController::class, 'delete'])->name('task.delete');
 Route::get('/task', [TaskController::class, 'index'])->name('task.view');
 
