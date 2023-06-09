@@ -8,5 +8,5 @@
         name="{{$name}}"
         value="{{$value ?? ''}}"
         placeholder="{{$placeholder ?? ''}}"
-    {{empty($required) ? '' : 'required'}} />
+        {{empty($required) ? '' : 'required'}} />
 </div>

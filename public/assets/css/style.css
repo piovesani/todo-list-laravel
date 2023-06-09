@@ -287,6 +287,16 @@ main{
     margin-bottom: 15px;
 }
 
+.alert-error{
+    margin-bottom: 20px;
+}
+
+.message{
+    color: green;
+    margin-bottom: 20px;
+}
+
+
 @media (max-width: 599px){
     .sidebar{
         display: none;

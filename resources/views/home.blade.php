@@ -1,8 +1,11 @@
 <x-layout page="TodoApp">
 
     <x-slot:btn>
-        <a href="" class="btn btn-primary">
+        <a href="{{route('tasks.create')}}" class="btn btn-primary">
             Criar tarefa
+        </a>
+        <a href="{{route('logout')}}" class="btn">
+            Sair
         </a>
     </x-slot:btn>
     <section class="graph">

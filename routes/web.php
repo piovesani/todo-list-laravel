@@ -18,9 +18,11 @@ Route::get('/task/delete', [TaskController::class, 'delete'])->name('task.delete
 Route::get('/task', [TaskController::class, 'index'])->name('task.view');
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/login', [AuthController::class, 'loginAction'])->name('user.loginAction');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/register', [AuthController::class, 'registerAction'])->name('user.registerAction');
 
-
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 
