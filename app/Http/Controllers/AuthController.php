@@ -9,6 +9,7 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+
     public function index(Request $request){
         if(Auth::check()){
             return redirect()->route('home');

@@ -1,6 +1,6 @@
 <div class="tasks">
     <div class="task-title">
-        <input type="checkbox"
+        <input type="checkbox" onchange="taskUpdate(this)" data-id="{{$data['id']}}"
             @if($data && $data['is_done'])
                 checked
             @endif
