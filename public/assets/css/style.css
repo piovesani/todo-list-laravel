@@ -5,6 +5,7 @@
     --color-primary: #6143FF;
     --wd-sidebar: 80px;
     --h-menu-nav: 100px;
+    --container : 100vw;
 }
 
 *{
@@ -17,34 +18,36 @@
 
 body{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--bg-white);
+    overflow-x: hidden;
 }
 
 .container{
-    width: 100%;
+    width: var(--container);
     height: 100%;
     display: flex;
 }
 
 .sidebar{
     width: var(--wd-sidebar);
-    height: auto;
-    padding: 10px;
+    height: auto !important;
+    padding-top: 20px;
     background-color: var(--color-primary);
     color: var(--bg-white);
+    display: flex;
+    justify-content: center;
 }
 
 .sidebar .logo{
-    width: 100%;
-    padding: 10%;
-    font-size: 32px;
+    width: 40px;
+    font-size: 30px;
     color: var(--bg-white);
     font-weight: 500;
 }
 
 .content nav{
-    width: calc(100vw - var(--wd-sidebar));
+    width: calc(100vw - var(--wd-sidebar) -20px);
     height: var(--h-menu-nav);
     background-color: var(--bg-light);
     display: flex;
@@ -86,7 +89,7 @@ body{
 }
 
 main{
-    width: calc(100vw - var(--wd-sidebar));
+    width: calc(var(--container) - var(--wd-sidebar) - 20px);
     padding: 20px;
     display: flex;
 }
@@ -144,11 +147,27 @@ main{
 
 .graph-placeholder{
     margin: 80px 0 80px 35px;
+    background-color: var(--color-primary);
     width: 300px;
     height: 300px;
-    background: url('/assets/images/graph.png');
-    background-size: contain;
+    border-radius: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.graph-body{
+    width: 77%;
+    height: 77%;
+    background-color: var(--bg-light);
+    color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+}
+
 
 .graph-tasks-left{
     margin: 20px 0 0 35px;
@@ -164,6 +183,7 @@ main{
     margin-bottom: 10px;
 }
 .list-header select{
+
     width: 180px;
     color: var(--color-primary);
     background-color: var(--bg-white);
@@ -174,10 +194,12 @@ main{
 }
 
 .list-header select option{
+    height: 30px !important;
+    padding: 10px;
     color: var(--color-primary);
     background-color: var(--bg-white);
     border: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     outline: 0;
 }
@@ -342,7 +364,7 @@ main{
         margin-bottom: 40px;
     }
 
-    .tasks {
+    .tasks, .task_done, .task_pending{
         width: 300px !important;
         display: flex;
         flex-direction: row;

@@ -25,25 +25,58 @@
         </div>
 
         <div class="graph-header-subtitle">
-            Tarefas <b>3/6</b>
+            Tarefas <b>{{$dataInfo['taskIsDone']}}/{{$dataInfo['taskCount']}}</b>
         </div>
 
-        <div class="graph-placeholder"></div>
+        <div class="graph-placeholder">
+            <div class="graph-body">
+                {{intval(($dataInfo['taskIsDone'] / $dataInfo['taskCount']) * 100)."%"}}
+            </div>
+        </div>
         <div class="graph-tasks-left">
             <img src="/assets/images/icon-info.png" />
-            Restam 3 tarefas a serem realizadas
+            Restam {{$dataInfo['taskCount'] - $dataInfo['taskIsDone']}} tarefas a serem realizadas
         </div>
     </section>
     <section class="list">
         <div class="list-header">
-            <select name="">
-                <option value="1">Todas as tarefas</option>
+            <select onchange="changeTaskStatusFilter(this)">
+                <option value="all_tasks">Todas as tarefas</option>
+                <option value="task_done">Tarefas Realizadas</option>
+                <option value="task_pending">Tarefas Pendentes</option>
             </select>
         </div>
 
         @foreach ($tasks as $task)
         <x-task :data=$task />
         @endforeach
+
+        <script>
+            const changeTaskStatusFilter = (e) =>{
+
+                    if(e.value ==='task_pending'){
+                        showAllTasks();
+                        document.querySelectorAll('.task_done').forEach(function(el){
+                            el.style.display = 'none';
+                        });
+                    }
+                    else if(e.value === 'task_done'){
+                        showAllTasks();
+                        document.querySelectorAll('.task_pending').forEach(function(el){
+                            el.style.display = 'none';
+                        });
+                    }
+                    else{
+                        showAllTasks();
+                    }
+            }
+
+            const showAllTasks = () => {
+                document.querySelectorAll('.tasks').forEach(function(el){
+                            el.style.display = 'flex';
+                        });
+            }
+        </script>
 
         <script>
             const taskUpdate = async (element) =>{
